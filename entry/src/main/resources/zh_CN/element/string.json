@@ -1,6 +1,10 @@
 {
   "string": [
     {
+      "name": "home_tab_title",
+      "value": "首页"
+    },
+    {
       "name": "module_desc",
       "value": "模块描述"
     },
@@ -10,7 +14,7 @@
     },
     {
       "name": "EntryAbility_label",
-      "value": "label"
+      "value": "wanAndroid-Ark"
     }
   ]
 }

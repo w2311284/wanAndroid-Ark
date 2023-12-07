@@ -15,13 +15,33 @@ export default class EntryAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/Index', (err, data) => {
+    windowStage.loadContent('pages/MainPage', (err, data) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
       }
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
     });
+
+    // windowStage.getMainWindow((err, windowClass: window.Window) => {
+    //   if (err.code) {
+    //     hilog.error(0x0000,'testTag',`Failed to obtain the main window. Code:${err.code}, message:${err.message}`);
+    //     return;
+    //   }
+    //   windowClass.setWindowLayoutFullScreen(true, (err) => {
+    //     if (err.code) {
+    //       hilog.error(0x0000,'testTag',`Failed to set full-screen mode. Code:${err.code}, message:${err.message}`);
+    //       return;
+    //     }
+    //   });
+    //   // 设置状态栏与导航栏不显示
+    //   windowClass.setWindowSystemBarEnable([], (err) => {
+    //     if (err.code) {
+    //       hilog.error(0x0000,'testTag',`Failed to set the system bar to be invisible. Code:${err.code}, message:${err.message}`);
+    //       return;
+    //     }
+    //   });
+    // })
   }
 
   onWindowStageDestroy() {
