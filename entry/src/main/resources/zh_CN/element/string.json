@@ -14,7 +14,15 @@
     },
     {
       "name": "EntryAbility_label",
-      "value": "wanAndroid-Ark"
+      "value": "玩安卓"
+    },
+    {
+      "name": "http_error_message",
+      "value": "网络请求失败, 请稍后重试!"
+    },
+    {
+      "name": "service_request_error_message",
+      "value": "服务请求失败, 请检查您的参数!"
     }
   ]
 }

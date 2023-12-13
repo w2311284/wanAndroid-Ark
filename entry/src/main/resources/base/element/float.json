@@ -23,6 +23,18 @@
     {
       "name": "mainPage_baseTab_size",
       "value": "25vp"
+    },
+    {
+      "name": "navigation_barHeight",
+      "value": "48vp"
+    },
+    {
+      "name": "navigation_bar_back_left",
+      "value": "5vp"
+    },
+    {
+      "name": "home_tab_width",
+      "value": "240vp"
     }
   ]
 }

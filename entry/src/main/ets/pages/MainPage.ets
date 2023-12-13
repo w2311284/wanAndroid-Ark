@@ -1,9 +1,9 @@
-import Home from '../view/Home';
-import Project from '../view/Project';
+import Home from '../view/Home/Home';
+import Project from '../view/Project/Project';
 import OfficialAcount from '../view/OfficialAcount';
 import Series from '../view/Series';
-import Mine from '../view/Mine';
-import Constants from '../common/constants/constants'
+import Mine from '../view/Mine/Mine';
+import Constants from '../common/constants/Constants'
 @Entry
 @Component
 struct MainPage {
@@ -37,38 +37,34 @@ struct MainPage {
       TabContent(){
         Home()
       }
-      .padding({left:$r('app.float.mainPage_padding'),right:$r('app.float.mainPage_padding')})
       .backgroundColor($r('app.color.mainPage_backgroundColor'))
       .tabBar(this.TabBuilder(Constants.HOME_TITLE,Constants.HOME_TAB_INDEX,$r('app.media.home_selected'),$r('app.media.home_normal')))
 
       TabContent(){
         Project()
       }
-      .padding({left:$r('app.float.mainPage_padding'),right:$r('app.float.mainPage_padding')})
       .backgroundColor($r('app.color.mainPage_backgroundColor'))
       .tabBar(this.TabBuilder(Constants.PROJECT_TITLE,Constants.PROJECT_TAB_INDEX,$r('app.media.project_selected'),$r('app.media.project_normal')))
 
       TabContent(){
         OfficialAcount()
       }
-      .padding({left:$r('app.float.mainPage_padding'),right:$r('app.float.mainPage_padding')})
       .backgroundColor($r('app.color.mainPage_backgroundColor'))
       .tabBar(this.TabBuilder(Constants.OFFICIALACOUNT_TITLE,Constants.OFFICIALACOUNT_TAB_INDEX,$r('app.media.officialAcount_selected'),$r('app.media.officialAcount_normal')))
 
       TabContent(){
         Series()
       }
-      .padding({left:$r('app.float.mainPage_padding'),right:$r('app.float.mainPage_padding')})
       .backgroundColor($r('app.color.mainPage_backgroundColor'))
       .tabBar(this.TabBuilder(Constants.SERIES_TITLE,Constants.SERIES_TAB_INDEX,$r('app.media.series_selected'),$r('app.media.series_normal')))
 
       TabContent(){
         Mine()
       }
-      .padding({left:$r('app.float.mainPage_padding'),right:$r('app.float.mainPage_padding')})
       .backgroundColor($r('app.color.mainPage_backgroundColor'))
       .tabBar(this.TabBuilder(Constants.MINE_TITLE,Constants.MINE_TAB_INDEX,$r('app.media.mine_selected'),$r('app.media.mine_normal')))
     }
+    .scrollable(false)
     .width(Constants.FULL_PARENT)
     .backgroundColor(Color.White)
     .barHeight($r('app.float.mainPage_barHeight'))

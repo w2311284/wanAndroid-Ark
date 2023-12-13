@@ -15,6 +15,14 @@
     {
       "name": "EntryAbility_label",
       "value": "wanAndroid-Ark"
+    },
+    {
+      "name": "http_error_message",
+      "value": "Network request failed, please try later!"
+    },
+    {
+      "name": "service_request_error_message",
+      "value": "Service request failed, please check your params!"
     }
   ]
 }
