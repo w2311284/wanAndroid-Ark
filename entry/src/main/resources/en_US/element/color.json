@@ -1,26 +1,6 @@
 {
   "color": [
     {
-      "name": "start_window_background",
-      "value": "#FFFFFF"
-    },
-    {
-      "name": "mainPage_selected",
-      "value": "#1698CE"
-    },
-    {
-      "name": "mainPage_normal",
-      "value": "#6B6B6B"
-    },
-    {
-      "name": "mainPage_backgroundColor",
-      "value": "#F1F3F5"
-    },
-    {
-      "name": "navigation_backgroundColor",
-      "value": "#2785FF"
-    },
-    {
       "name": "material_red_A400",
       "value": "#FF1744"
     },

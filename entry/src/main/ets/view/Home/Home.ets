@@ -22,7 +22,7 @@ export default struct Home {
         .opacity(this.currentIndex === index ? 1 : 0)
         .width('50%')
     }
-    .justifyContent(FlexAlign.Center)
+    .justifyContent(FlexAlign.SpaceAround)
     .width(Constants.FULL_PARENT)
     .onClick(()=>{
       this.currentIndex = index;
@@ -38,6 +38,7 @@ export default struct Home {
         Recommended()
       }.tabBar(this.TabBuilder(Constants.RECOMMENDED_TITLE,0))
 
+
       TabContent(){
         Square()
       }.tabBar(this.TabBuilder(Constants.SQUARE_TITLE,1))
@@ -46,7 +47,6 @@ export default struct Home {
         Answer()
       }.tabBar(this.TabBuilder(Constants.ANSWER_TITLE,2))
     }
-    .width($r('app.float.home_tab_width'))
     .barMode(BarMode.Fixed)
     .onChange((index: number)=>{
       this.currentIndex = index;

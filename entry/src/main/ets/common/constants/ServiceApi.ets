@@ -11,7 +11,10 @@ export default class ServiceApi {
 
   static readonly GET_BANNER_LIST: string = 'banner/json';
 
+  static readonly  GET_HOME_TOPIC_ARTICLE_LIST: string = 'article/top/json'
+
   static readonly GET_HOME_ARTICLE_LIST: string = 'article/list';
+
 }
 
 export const enum ContentType {

@@ -10,5 +10,13 @@ export default class Banner {
 }
 
 export class Banners{
-  banners : Array<Banner>
+  banners : Array<Banner> = [
+
+  ]
+
+
 }
+
+
+
+

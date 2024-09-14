@@ -33,6 +33,8 @@ export default class Article {
   visible : number = 0;
   zan : number = 0;
 
+  isTopic: boolean = false;
+
 }
 
 export class Tag{
