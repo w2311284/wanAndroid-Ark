@@ -1,4 +1,5 @@
-export default class Article {
+export default class Article{
+
   apkLink : string = "";
   audit : number = 0;
   author : string = "";

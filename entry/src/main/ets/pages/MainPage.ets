@@ -1,8 +1,8 @@
-import Home from '../view/Home/Home';
-import Project from '../view/Project/Project';
-import OfficialAcount from '../view/OfficialAcount';
-import Series from '../view/Series';
-import Mine from '../view/Mine/Mine';
+import Home from '../views/Home/Home';
+import Project from '../views/Project/Project';
+import OfficialAcount from '../views/OfficialAcount';
+import Series from '../views/Series';
+import Mine from '../views/Mine/Mine';
 import Constants from '../common/constants/Constants'
 @Entry
 @Component
