@@ -6,6 +6,8 @@ import ResponseResult from '../../common/model/ResponseResult';
 import { httpRequestGet } from '../../common/service/HttpService';
 import Logger from '../../common/utils/Logger';
 
+/*
+ * 获取广场列表*/
 export function getSquareList(pageNo: number) : Promise<Page> {
     return new Promise(async (resolve: Function, reject: Function) => {
       const url = `${ServiceApi.SERVER}/${ServiceApi.GET_HOME_SQUARE_LIST}/${pageNo}/json?page_size=10`
@@ -20,7 +22,20 @@ export function getSquareList(pageNo: number) : Promise<Page> {
       })
     })
 }
-
+export function getWendaList(pageNo: number) : Promise<Page> {
+  return new Promise(async (resolve: Function, reject: Function) => {
+    const url = `${ServiceApi.SERVER}/${ServiceApi.GET_HOME_WENDA_LIST}/${pageNo}/json?page_size=10`
+    httpRequestGet(url).then((result: ResponseResult) => {
+      if (result.errorCode === ServiceApi.SERVICE_CODE_SUCCESS) {
+        resolve(result.data)
+      }else  {
+        reject($r('app.string.service_request_error_message'))
+      }
+    }).catch((err: Error) => {
+      reject($r('app.string.http_error_message'));
+    })
+  })
+}
 export function getBanner(): Promise<Banner[]> {
   return new Promise(async (resolve: Function, reject: Function) => {
     let url = `${ServiceApi.SERVER}/${ServiceApi.GET_BANNER_LIST}`;

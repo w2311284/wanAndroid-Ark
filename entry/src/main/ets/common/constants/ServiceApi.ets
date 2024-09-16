@@ -16,6 +16,8 @@ export default class ServiceApi {
   static readonly GET_HOME_ARTICLE_LIST: string = 'article/list';
   /// 获取广场列表
   static readonly  GET_HOME_SQUARE_LIST: string = 'user_article/list'
+  /// 问答列表
+  static readonly  GET_HOME_WENDA_LIST: string = 'wenda/list'
 }
 
 export const enum ContentType {
