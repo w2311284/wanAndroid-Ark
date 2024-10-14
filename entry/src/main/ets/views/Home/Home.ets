@@ -1,17 +1,18 @@
-import Constants from '../../common/constants/Constants'
+import Constants from '../../constants/Constants';
 import Answer from './Answer';
 import Recommended from './Recommended'
 import Square from './Square';
+
 @Component
 export default struct Home {
   @State currentIndex: number = 0;
   private tabsController: TabsController = new TabsController();
 
-
-  @Builder TabBuilder(title: string, index: number) {
-    Column(){
+  @Builder
+  TabBuilder(title: string, index: number) {
+    Column() {
       Text(title)
-        .margin({ top: 14,bottom:10 })
+        .margin({ top: 14, bottom: 10 })
         .fontSize(14)
         .fontWeight(this.currentIndex === index ? 500 : 300)
         .fontColor(this.currentIndex === index ? $r('app.color.mainPage_selected') : $r('app.color.mainPage_normal'))
@@ -24,38 +25,37 @@ export default struct Home {
     }
     .justifyContent(FlexAlign.SpaceAround)
     .width(Constants.FULL_PARENT)
-    .onClick(()=>{
+    .onClick(() => {
       this.currentIndex = index;
       this.tabsController.changeIndex(this.currentIndex);
     })
   }
 
-  build(){
+
+
+  build() {
     Tabs({
       controller: this.tabsController
-    }){
-      TabContent(){
+    }) {
+      // 推荐
+      TabContent() {
         Recommended()
-      }.tabBar(this.TabBuilder(Constants.RECOMMENDED_TITLE,0))
+      }.tabBar(this.TabBuilder(Constants.RECOMMENDED_TITLE, 0))
 
-
-      TabContent(){
+      /* 广场 */
+      TabContent() {
         Square()
-      }.tabBar(this.TabBuilder(Constants.SQUARE_TITLE,1))
+      }.tabBar(this.TabBuilder(Constants.SQUARE_TITLE, 1))
 
-      TabContent(){
+      TabContent() {
         Answer()
-      }.tabBar(this.TabBuilder(Constants.ANSWER_TITLE,2))
+      }.tabBar(this.TabBuilder(Constants.ANSWER_TITLE, 2))
     }
     .barMode(BarMode.Fixed)
-    .onChange((index: number)=>{
+    .onChange((index: number) => {
       this.currentIndex = index;
     })
-  }
 
-  Column(){
 
   }
-
-
 }

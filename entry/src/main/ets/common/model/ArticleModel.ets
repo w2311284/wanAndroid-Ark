@@ -42,3 +42,14 @@ export class Tag{
   name : string = '';
   url : string = '';
 }
+
+export  function  mockArticle(): Article {
+  let item = new Article()
+  item.author = "mark zhang"
+  item.title = "测试模拟数据，mock的 哈哈哈"
+  let tag:Tag = new Tag()
+  tag.name = "mock 广场"
+  item.tags = [tag]
+  item.niceDate = "2024-09-11"
+  return item;
+}

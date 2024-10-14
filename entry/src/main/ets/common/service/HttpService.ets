@@ -1,7 +1,7 @@
 // HttpUtil.ets
 import http from '@ohos.net.http';
+import ServiceApi, { ContentType1 } from './ServiceApi';
 import ResponseResult from '../model/ResponseResult';
-import ServiceApi ,{ContentType} from '../constants/ServiceApi'
 // GET请求
 export function httpRequestGet(url: string) {
   return httpRequest(url, http.RequestMethod.GET);
@@ -18,7 +18,7 @@ function httpRequest(url: string, method: http.RequestMethod, params?: Object): 
     method: method,
     readTimeout: ServiceApi.HTTP_READ_TIMEOUT,
     header: {
-      'Content-Type': ContentType.JSON
+      'Content-Type':  ContentType1.JSON
     },
     connectTimeout: ServiceApi.HTTP_READ_TIMEOUT,
     extraData: params

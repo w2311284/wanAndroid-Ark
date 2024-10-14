@@ -4,7 +4,7 @@ import { LengthMetrics } from '@kit.ArkUI';
 @Component
 export  struct ArticleItem {
   private item: Article = new Article();
-
+  @Consume('articlePageStack') articlePageStack: NavPathStack;
   build() {
     Column() {
       Row() {
@@ -13,6 +13,10 @@ export  struct ArticleItem {
             .margin({ right: 8 })
             .fontColor($r('app.color.md_theme_on_surface_variant'))
             .fontSize(13)
+            .onClick(() => {
+              console.log("author button is clicked")
+              this.articlePageStack.pushPathByName("PersonProfile","12345ID")
+            })
           if (this.item.fresh) {
             Text('新')
               .fontColor($r('app.color.material_red_A400'))
@@ -71,5 +75,9 @@ export  struct ArticleItem {
     .padding(16)
     .margin({top:6,bottom:6,left:16,right:16})
     .shadow({radius: 10, color:Color.Gray})
+    .onClick(() => {
+      console.log("item is clicked")
+      this.articlePageStack.pushPathByName("toWebviewPage",this.item.link)
+    })
   }
 }

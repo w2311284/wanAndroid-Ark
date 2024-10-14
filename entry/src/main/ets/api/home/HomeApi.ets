@@ -1,10 +1,10 @@
-import ServiceApi from '../../common/constants/ServiceApi';
 import Article from '../../common/model/ArticleModel';
 import Banner from '../../common/model/BannerModel'
 import Page from '../../common/model/PageModel';
 import ResponseResult from '../../common/model/ResponseResult';
 import { httpRequestGet } from '../../common/service/HttpService';
 import Logger from '../../common/utils/Logger';
+import ServiceApi from '../../common/service/ServiceApi';
 
 /*
  * 获取广场列表*/

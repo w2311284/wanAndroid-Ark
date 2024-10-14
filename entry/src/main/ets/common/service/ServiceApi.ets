@@ -11,16 +11,33 @@ export default class ServiceApi {
 
   static readonly GET_BANNER_LIST: string = 'banner/json';
 
-  static readonly  GET_HOME_TOPIC_ARTICLE_LIST: string = 'article/top/json'
+  static readonly GET_HOME_TOPIC_ARTICLE_LIST: string = 'article/top/json'
 
   static readonly GET_HOME_ARTICLE_LIST: string = 'article/list';
   /// 获取广场列表
-  static readonly  GET_HOME_SQUARE_LIST: string = 'user_article/list'
+  static readonly GET_HOME_SQUARE_LIST: string = 'user_article/list'
   /// 问答列表
-  static readonly  GET_HOME_WENDA_LIST: string = 'wenda/list'
+  static readonly GET_HOME_WENDA_LIST: string = 'wenda/list'
+
+  /** 项目 */
+  /**
+   * 项目分类数据
+   */
+  static readonly GET_PROJECT_TREE: string = 'project/tree/json'
+
+  /**
+   * 最新项目列表
+   */
+  static readonly GET_PROJECT_NEWEST_LIST: string = 'article/listproject'
+
+  /**
+   * 项目文章列表
+   */
+  static readonly GET_PROJECT_LIST:string = 'project/list'
+
 }
 
-export const enum ContentType {
+export const enum ContentType1 {
   JSON = 'application/json',
   FORM = 'multipart/form-data'
 }

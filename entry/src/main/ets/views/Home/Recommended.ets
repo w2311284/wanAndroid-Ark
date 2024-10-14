@@ -3,6 +3,7 @@ import Banner from '../../common/model/BannerModel';
 import Page from '../../common/model/PageModel';
 import { ArticleItem } from './ArticleItem';
 import { getBanner, getHomeArticleList } from '../../api/home/HomeApi';
+import { PersonProfile } from './PersonProfile';
 
 
 @Preview
@@ -18,13 +19,13 @@ export default struct Recommended {
 
       getHomeArticleList(1).then((data: Page) => {
           this.articles = this.articles.concat(data.datas)
-        console.log('home list ',data.datas.toString())
-        console.log('article count',this.articles.length)
       });
-
   }
 
+
+
   build() {
+
     List() {
       this.BannerLayout()
       this.ContentLayout()
@@ -32,6 +33,7 @@ export default struct Recommended {
     .height('100%')
     .scrollBar(BarState.Off)
   }
+
 
   @Builder
   BannerLayout() {
