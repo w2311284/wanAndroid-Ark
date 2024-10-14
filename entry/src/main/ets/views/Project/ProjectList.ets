@@ -1,4 +1,4 @@
-import { getProjectNewestList } from '../../api/home/ProjectApi'
+import { getProjectNewestList } from '../../api/ProjectApi'
 import Article from '../../common/model/ArticleModel'
 import Page from '../../common/model/PageModel'
 import { ProjectItem } from './ProjectItem'

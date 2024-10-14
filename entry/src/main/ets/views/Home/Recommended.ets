@@ -2,8 +2,7 @@ import Article, { Tag } from '../../common/model/ArticleModel';
 import Banner from '../../common/model/BannerModel';
 import Page from '../../common/model/PageModel';
 import { ArticleItem } from './ArticleItem';
-import { getBanner, getHomeArticleList } from '../../api/home/HomeApi';
-import { PersonProfile } from './PersonProfile';
+import { getBanner, getHomeArticleList } from '../../api/HomeApi';
 
 
 @Preview

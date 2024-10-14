@@ -1,11 +1,11 @@
 import Home from '../views/Home/Home';
 import Project from '../views/Project/Project';
-import OfficialAcount from '../views/OfficialAcount';
 import Series from '../views/Series';
 import Mine from '../views/Mine/Mine';
 import { PersonProfile } from '../views/Home/PersonProfile';
 import Constants from '../constants/Constants';
 import { WebViewComponent } from '../views/web/WebView';
+import { Group } from '../views/group/Group';
 
 @Entry
 @Component
@@ -45,7 +45,7 @@ struct MainPage {
       Tabs({
         barPosition: BarPosition.End,
         controller: this.tabsController,
-        index:1
+        index:3
       }){
         TabContent(){
           Home()
@@ -60,16 +60,15 @@ struct MainPage {
         .tabBar(this.TabBuilder(Constants.PROJECT_TITLE,Constants.PROJECT_TAB_INDEX,$r('app.media.project_selected'),$r('app.media.project_normal')))
 
         TabContent(){
-          OfficialAcount()
-        }
-        .backgroundColor($r('app.color.mainPage_backgroundColor'))
-        .tabBar(this.TabBuilder(Constants.OFFICIALACOUNT_TITLE,Constants.OFFICIALACOUNT_TAB_INDEX,$r('app.media.officialAcount_selected'),$r('app.media.officialAcount_normal')))
-
-        TabContent(){
           Series()
         }
         .backgroundColor($r('app.color.mainPage_backgroundColor'))
-        .tabBar(this.TabBuilder(Constants.SERIES_TITLE,Constants.SERIES_TAB_INDEX,$r('app.media.series_selected'),$r('app.media.series_normal')))
+        .tabBar(this.TabBuilder(Constants.SERIES_TITLE,Constants.SERIES_TAB_INDEX,$r('app.media.officialAcount_selected'),$r('app.media.officialAcount_normal')))
+        TabContent(){
+          Group()
+        }
+        .backgroundColor($r('app.color.mainPage_backgroundColor'))
+        .tabBar(this.TabBuilder(Constants.OFFICIALACOUNT_TITLE,Constants.OFFICIALACOUNT_TAB_INDEX,$r('app.media.series_selected'),$r('app.media.series_normal')))
 
         TabContent(){
           Mine()

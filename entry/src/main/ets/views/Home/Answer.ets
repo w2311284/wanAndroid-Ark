@@ -1,4 +1,4 @@
-import { getWendaList } from '../../api/home/HomeApi'
+import { getWendaList } from '../../api/HomeApi'
 import Article from '../../common/model/ArticleModel'
 import Page from '../../common/model/PageModel'
 import { ArticleItem } from './ArticleItem'

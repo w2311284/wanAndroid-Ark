@@ -1,7 +1,7 @@
-import Page from '../../common/model/PageModel';
-import ResponseResult from '../../common/model/ResponseResult';
-import { httpRequestGet } from '../../common/service/HttpService';
-import ServiceApi from '../../common/service/ServiceApi';
+import Page from '../common/model/PageModel';
+import ResponseResult from '../common/model/ResponseResult';
+import { httpRequestGet } from '../common/service/HttpService';
+import ServiceApi from '../common/service/ServiceApi';
 
 /**
  * 获取最新项目列表

@@ -7,8 +7,8 @@ export default class Constants {
   static readonly OFFICIALACOUNT_TITLE = '公众号';
   static readonly HOME_TAB_INDEX = 0;
   static readonly PROJECT_TAB_INDEX = 1;
-  static readonly OFFICIALACOUNT_TAB_INDEX = 2;
-  static readonly SERIES_TAB_INDEX = 3;
+  static readonly OFFICIALACOUNT_TAB_INDEX = 3;
+  static readonly SERIES_TAB_INDEX = 2;
   static readonly MINE_TAB_INDEX = 4;
   static readonly RECOMMENDED_TITLE = '推荐';
   static readonly SQUARE_TITLE = '广场';

@@ -14,7 +14,7 @@ export  struct ArticleItem {
             .fontColor($r('app.color.md_theme_on_surface_variant'))
             .fontSize(13)
             .onClick(() => {
-              console.log("author button is clicked")
+              console.log("name button is clicked")
               this.articlePageStack.pushPathByName("PersonProfile","12345ID")
             })
           if (this.item.fresh) {

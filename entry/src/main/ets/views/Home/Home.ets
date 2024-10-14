@@ -55,7 +55,5 @@ export default struct Home {
     .onChange((index: number) => {
       this.currentIndex = index;
     })
-
-
   }
 }

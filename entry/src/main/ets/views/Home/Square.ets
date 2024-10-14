@@ -1,4 +1,4 @@
-import { getSquareList } from '../../api/home/HomeApi'
+import { getSquareList } from '../../api/HomeApi'
 import Article from '../../common/model/ArticleModel'
 import Page from '../../common/model/PageModel'
 import { ArticleItem } from './ArticleItem'

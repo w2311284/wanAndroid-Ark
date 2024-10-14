@@ -35,6 +35,17 @@ export default class ServiceApi {
    */
   static readonly GET_PROJECT_LIST:string = 'project/list'
 
+
+  /**
+   * 公众号作者列表
+   */
+  static readonly GET_GROUP_AUTHOR_LIST: string = 'wxarticle/chapters/json'
+
+  /**
+   * 对于作者的文章
+   */
+  static readonly GET_GROUP_AUTHOR_ARTICLE_LIST: string = 'wxarticle/list'
+
 }
 
 export const enum ContentType1 {
