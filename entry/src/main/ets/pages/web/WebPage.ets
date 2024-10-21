@@ -17,6 +17,7 @@ struct WebPage {
         .javaScriptAccess(true)
         .onlineImageAccess(true)
         .imageAccess(true)
+        .domStorageAccess(true)
         .mixedMode(MixedMode.All)
         .onHttpErrorReceive((event) => {
         })
