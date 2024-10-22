@@ -82,7 +82,8 @@ export struct ArticleItem {
       router.pushUrl({
         url: 'pages/web/WebPage',
         params: {
-          url: this.item.link
+          url: this.item.link,
+          title:this.item.title
         }
       })
     })

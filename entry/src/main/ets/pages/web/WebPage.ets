@@ -1,17 +1,25 @@
 import { webview } from '@kit.ArkWeb';
 import { router } from '@kit.ArkUI';
+import { TitleBar } from '@yt/YtKit';
+
 
 @Entry
 @Component
 struct WebPage {
   @State url: string = '';
+  @State title : string = '';
   controller: webview.WebviewController = new webview.WebviewController();
   aboutToAppear(): void {
     const params = router.getParams() as WebParams
+    this.title = params.title
     this.url = params.url
+
   }
   build() {
     Column(){
+      TitleBar({isNeedBack:true,title:this.title,onBackClick: () =>{
+         router.back();
+      }})
       Web({src: this.url,controller:this.controller})
         .fileAccess(true)
         .javaScriptAccess(true)
@@ -27,4 +35,5 @@ struct WebPage {
 
 class WebParams {
   url: string = ''
+  title: string = ''
 }
