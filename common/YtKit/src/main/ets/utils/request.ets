@@ -1,6 +1,6 @@
 import { BASE_URL } from '../constants'
 import http from '@ohos.net.http';
-import { promptAction  } from '@kit.ArkUI';
+import { KeyboardAvoidMode, promptAction  } from '@kit.ArkUI';
 import { ResponseData } from '../models';
 
 async function requestHttp<T>(url: string = "", method: http.RequestMethod = http.RequestMethod.GET, data?: object): Promise<T> {
@@ -8,6 +8,7 @@ async function requestHttp<T>(url: string = "", method: http.RequestMethod = htt
   const httpRequest = http.createHttp()
 
   let urlStr = BASE_URL + url
+  let postParam = ''
   if (method === http.RequestMethod.GET) {
     if (data && Object.keys(data).length) {
       urlStr += "?" + Object.keys(data).filter(key => !!data[key]).map(key => {
@@ -16,10 +17,19 @@ async function requestHttp<T>(url: string = "", method: http.RequestMethod = htt
     }
   }
 
+  // urlencode
+  if(method === http.RequestMethod.POST){
+    if (data && Object.keys(data).length) {
+       postParam = Object.keys(data).filter(key => !!data[key]).map(key => {
+        return `${encodeURI(key)}=${encodeURI(data[key])}`
+      }).join('&')
+    }
+  }
+
   const config: http.HttpRequestOptions = {
-    extraData: method !== http.RequestMethod.GET ? data : "",
+    extraData: method !== http.RequestMethod.GET ? postParam : "",
     header: {
-      "Content-Type": "application/json",
+      "Content-Type": method === http.RequestMethod.POST ? "application/x-www-form-urlencoded" : "application/json",
     },
     method: method,
     readTimeout: 20000

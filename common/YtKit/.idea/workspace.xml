@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0017cfe7-9545-4a6a-b8e6-77f83e104d3a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Index.ets" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-profile.json5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer-rules.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hvigorfile.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obfuscation-rules.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oh-package.json5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/ets/components/MainPage.ets" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/module.json5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/base/element/string.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/en_US/element/string.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/zh_CN/element/string.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ohosTest/ets/test/Ability.test.ets" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ohosTest/ets/test/List.test.ets" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ohosTest/module.json5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/List.test.ets" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/LocalUnit.test.ets" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../entry/src/main/resources/base/media/arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../entry/src/main/resources/base/media/avatar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-profile.json5" beforeDir="false" afterPath="$PROJECT_DIR$/../build-profile.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../entry/src/main/ets/api/GroupApi.ets" beforeDir="false" afterPath="$PROJECT_DIR$/../entry/src/main/ets/api/GroupApi.ets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../entry/src/main/ets/views/Mine/Mine.ets" beforeDir="false" afterPath="$PROJECT_DIR$/../entry/src/main/ets/views/Mine/Mine.ets" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2nYa8JEyeS3SaZ2E1vHPnoSz1TX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/youzhadoubao/Documents/HormonyOS/Project/wanAndroid-Ark/YtKit"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+</project>

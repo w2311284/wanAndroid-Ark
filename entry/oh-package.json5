@@ -6,7 +6,7 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "@yt/YtKit" : "file:../common/YtKit"
+    "@yt/YtKit" : "file:../common/YtKit",
   }
 }
 

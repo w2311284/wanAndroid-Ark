@@ -1,3 +1,5 @@
+import { router } from '@kit.ArkUI'
+
 @Preview
 @Component
 export default struct Mine {
@@ -16,6 +18,11 @@ export default struct Mine {
       Image($r('app.media.avatar'))
         .size({width: 96, height: 96})
         .margin({right:20,left:20})
+        .onClick(() => {
+          router.pushUrl({
+            url: 'pages/login/Login'
+          })
+        })
       Column(){
         Text('未登录')
           .fontSize(12)
