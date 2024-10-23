@@ -1,60 +1,76 @@
-@Preview
+interface CustomNavBarButtonOptions {
+  icon?: ResourceStr;
+  onClick?: () => void;
+}
+
+interface CustomNavBarTitleOptions {
+  fontSize?: number;
+  fontWeight?: FontWeight;
+  text?: string;
+  fontColor?: string;
+  onClick?: () => void;
+}
+
+interface CustomNavBarOptions {
+  backgroundColor?: ResourceStr;
+}
+
 @Component
-struct YtNavBar {
-  title: string = ''
-  showBackIcon: boolean = true
-  rightActions: YtNavButton[] = []
-  backAction?: () => void = () => {
+struct YtCustomBaseNavBar {
+  @State titleOptions: CustomNavBarTitleOptions = {
+    fontSize: 18,
+    fontWeight: FontWeight.Normal,
+    text: '',
+    fontColor: '#2785ff',
+    onClick: () => {
+    }
+  };
+  @State navOptions: CustomNavBarOptions = {
+    backgroundColor : $r('app.color.white')
   }
+  @State leftButtons: Array<CustomNavBarButtonOptions> = [];
+  @State rightButtons: Array<CustomNavBarButtonOptions> = [];
 
   build() {
+    Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) {
+      ForEach(this.leftButtons, (item: CustomNavBarButtonOptions) => {
+        Row({ space: 'between' }) {
+          Image(item.icon).width(24).height(24).onClick(item.onClick)
+        }
+      })
 
-    Row() {
-      // left action
-      if (this.showBackIcon) {
-        Image($r('app.media.ic_arrow_back')).width(24)
-          .height(24)
-          .onClick(() => {
-            if (this.backAction) {
-              this.backAction()
-            }
-          })
-      }
-      // title
-      Text(this.title)
-        .fontWeight(500)
-        .fontSize(18)
-        .fontColor(Color.Black)
-        .layoutWeight(1)
-        .margin({ left: 8, right: 8 })
-        .maxLines(1)
-        .textOverflow({ overflow: TextOverflow.Ellipsis })
-      // right buttons
-      Row() {
-        ForEach(this.rightActions, (button: YtNavButton) => {
-          Image(button.icon)
-            .width(24)
-            .height(24)
-        })
-      }
-    }
-    .width('100%')
-    .backgroundColor(Color.White)
-    .height(64)
-    .padding({ left: 16, right: 16 })
-    .justifyContent(FlexAlign.SpaceBetween)
+      Blank().width(15)
+
+      Text(this.titleOptions.text)
+        .textAlign(TextAlign.Center)
+        .fontSize(this.titleOptions.fontSize)
+        .fontWeight(this.titleOptions.fontWeight)
+        .fontColor(this.titleOptions.fontColor)
+        .onClick(this.titleOptions.onClick)
+
+      Blank().width(15)
+
+      ForEach(this.rightButtons, (item: CustomNavBarButtonOptions) => {
+        Row({ space: 'between' }) {
+          Image(item.icon).width(24).height(24).onClick(item.onClick)
+        }
+      })
+    }.height(45).width('100%').backgroundColor(this.navOptions.backgroundColor)
   }
 }
 
+@Component
+struct TitleBar {
+  @State isNeedBack: boolean = false;
+  @State title: string = "";
+  onBackClick ?: () => void;
 
-export { YtNavBar }
-
-class YtNavButton {
-  icon: ResourceStr = ''
-  fontSize?: number = 12
-  fontColor?: ResourceStr = ''
-  action?: () => void = () => {
+  build() {
+    YtCustomBaseNavBar({
+      titleOptions: { text: this.title,fontColor: '#ffffff' },
+      leftButtons: this.isNeedBack ? [{ icon: $r('app.media.ic_arrow_back'), onClick: this.onBackClick}] : []
+    })
   }
 }
 
-export { YtNavButton }
+export { YtCustomBaseNavBar, TitleBar }

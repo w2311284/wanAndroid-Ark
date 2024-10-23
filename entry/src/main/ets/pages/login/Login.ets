@@ -1,7 +1,9 @@
+import { LoginForm, LoginFormModel } from '../../models/User';
+import { router } from '@kit.ArkUI';
 import { login } from '../../api/User';
-import { LoginFormModel } from '../../models/User';
-import { promptAction } from '@kit.ArkUI';
+import { TOKEN_KEY, UserSetting } from '@yt/YtKit';
 
+@Preview
 @Entry
 @Component
 struct Login {
@@ -9,20 +11,20 @@ struct Login {
   @State loginParam: LoginFormModel = new LoginFormModel({
     username: 'youzhadoubao',
     password: '123456'
-  })
-
-  aboutToAppear(): void {
-    this.login()
-  }
+  } as LoginForm)
 
   async login() {
     const user = await login(this.loginParam)
+    const token = JSON.stringify(user)
+    await new UserSetting(getContext()).setToken(token)
+    AppStorage.setOrCreate(TOKEN_KEY,token)
+    router.back()
   }
 
   @Styles
   loginStyle() {
     .backgroundColor('#fff')
-    .border({color: Color.Green, width: 1})
+    .border({color: $r('app.color.primary'), width: 1})
     .borderRadius(5)
     .height(55)
   }
@@ -37,22 +39,6 @@ struct Login {
 
   build() {
     Stack({alignContent: Alignment.Top}) {
-
-      Row(){
-        Button({type: ButtonType.Capsule}) {
-          Text('返回')
-        }
-        .onClick(() => {
-          promptAction.showToast({message: "返回"})
-        })
-        .zIndex(3)
-      }
-      .width('100%')
-      .justifyContent(FlexAlign.Start)
-      .height(64)
-      .backgroundColor(Color.Yellow)
-      .padding({left:16})
-
       Column() {
         Image($r('app.media.avatar'))
           .width(100)
@@ -74,12 +60,16 @@ struct Login {
 
         Button({type: ButtonType.Capsule}){
           Text('登录')
+            .fontColor($r('app.color.white'))
         }
-        .backgroundColor(Color.Red)
+        .backgroundColor($r('app.color.primary'))
         .margin({top:25})
         .width(80)
         .height(40)
         .enabled(this.getBtnEnable())
+        .onClick(() => {
+          this.login()
+        })
 
         Text('没有账号？来注册吧')
           .margin({top:20})
@@ -89,6 +79,20 @@ struct Login {
       .height('100%')
       .justifyContent(FlexAlign.Center)
       .padding({left:20, right:20})
+
+
+      Row(){
+        Image($r('app.media.ic_arrow_back'))
+          .width(24)
+          .height(24)
+          .onClick(() => {
+            router.back()
+          })
+      }
+      .width('100%')
+      .justifyContent(FlexAlign.Start)
+      .height(64)
+      .padding({left:16})
     }
     .width('100%')
     .height('100%')
