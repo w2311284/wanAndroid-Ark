@@ -1,7 +1,7 @@
 import { router } from '@kit.ArkUI'
 import { Cookie } from '@yt/YtKit'
 import { getUserInfo } from '../../../api/User'
-import { CoinInfo, CoinInfoModel, User , UserInfo, UserInfoModel, UserModel } from '../../../models/User'
+import { CoinInfo, CoinInfoModel, User, UserInfo, UserInfoModel, UserModel } from '../../../models/User'
 
 @Preview
 @Component
@@ -58,6 +58,21 @@ export default struct Mine {
             .fontSize(12)
           Text(`排名：${this.coinInfo.rank}`)
             .fontSize(12)
+          Image($r('app.media.arrow'))
+            .width(12)
+            .height(12)
+            .onClick(() => {
+              if (!this.isLogin) {
+                router.pushUrl({ url: 'pages/login/Login' })
+              } else {
+                router.pushUrl({
+                  url: 'pages/coinList/CoinList',
+                  params: {
+                    coinInfo: this.coinInfo
+                  }
+                })
+              }
+            })
         }
       }
       .alignItems(HorizontalAlign.Start)

@@ -2,6 +2,7 @@
   "src": [
     "pages/Index",
     "pages/web/WebPage",
-    "pages/login/Login"
+    "pages/login/Login",
+    "pages/coinList/CoinList"
   ]
 }

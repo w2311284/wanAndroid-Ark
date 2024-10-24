@@ -7,6 +7,14 @@
     {
       "name": "primary",
       "value": "#28638a"
+    },
+    {
+      "name": "secondary",
+      "value": "#575e71"
+    },
+    {
+      "name": "surface_dim",
+      "value": "#d9d9e0"
     }
   ]
 }
