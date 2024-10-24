@@ -14,13 +14,13 @@ export class LoginFormModel implements LoginForm {
 }
 
 export interface User {
-  coinInfo: CoinInfoModel,
-  userInfo: UserInfoModel
+  coinInfo: CoinInfo,
+  userInfo: UserInfo
 }
 
 export class UserModel implements User {
-  coinInfo: CoinInfoModel
-  userInfo: UserInfoModel
+  coinInfo: CoinInfo
+  userInfo: UserInfo
 
   constructor(user: User) {
     this.coinInfo = user.coinInfo

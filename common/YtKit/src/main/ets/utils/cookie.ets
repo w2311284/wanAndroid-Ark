@@ -26,11 +26,10 @@ export class Cookie {
     let lines = cookies.split('\r\n')
     lines.forEach((line) => {
       let attrs = line.split('\t')
-      if (attrs.length != 7 || !attrs[0]) {
-        return
+      if (attrs.length === 7 && (attrs[5] === 'loginUserName_wanandroid_com' || attrs[5] === 'token_pass_wanandroid_com')) {
+        let item: string = attrs[5] + '=' + attrs[6]
+        result.push(item)
       }
-      let item: string = attrs[5] + '=' + attrs[6]
-      result.push(item)
     })
     return result
   }
@@ -75,10 +74,10 @@ export class Cookie {
       if (item.length !== 2) {
         return
       }
-      if (item[0] === 'loginUserName_wanandroid_com') {
+      if (item[0].trim() === 'loginUserName_wanandroid_com') {
         isUserNameValid = item[1].length > 0
       }
-      if (item[0] === 'token_pass_wanandroid_com') {
+      if (item[0].trim() === 'token_pass_wanandroid_com') {
         isUserTokenValid = item[1].length > 0
       }
     })
