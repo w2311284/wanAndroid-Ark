@@ -1,3 +1,5 @@
+import { CoinInfo } from './Coin'
+
 export interface LoginForm {
   username: string
   password: string
@@ -28,32 +30,7 @@ export class UserModel implements User {
   }
 }
 
-export interface CoinInfo {
-  coinCount: number
-  level: number
-  nickname: string
-  rank: string
-  userId: number
-  username: string
-}
 
-export class CoinInfoModel implements CoinInfo {
-  coinCount: number
-  level: number
-  nickname: string
-  rank: string
-  userId: number
-  username: string
-
-  constructor(model: CoinInfo) {
-    this.coinCount = model.coinCount
-    this.level = model.level
-    this.nickname = model.nickname
-    this.rank = model.rank
-    this.userId = model.userId
-    this.username = model.username
-  }
-}
 
 export interface CollectArticleInfo {
   count: number

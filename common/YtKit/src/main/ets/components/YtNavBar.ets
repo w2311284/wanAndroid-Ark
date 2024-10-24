@@ -7,7 +7,7 @@ interface CustomNavBarTitleOptions {
   fontSize?: number;
   fontWeight?: FontWeight;
   text?: string;
-  fontColor?: string;
+  fontColor?: ResourceStr;
   onClick?: () => void;
 }
 

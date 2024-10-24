@@ -1,4 +1,4 @@
-import { CoinInfo, CoinInfoModel } from '../../models/User'
+import { CoinInfoModel,CoinInfo } from '../../models/Coin'
 
 @Preview
 @Component

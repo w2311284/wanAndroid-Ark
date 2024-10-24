@@ -1,10 +1,10 @@
-import { Coin, CoinModel } from '../../models/Coin'
+import { MyCoin, MyCoinModel } from '../../models/Coin'
 
 @Preview
 @Component
 export struct CoinItem {
 
-  coinItem: CoinModel = new CoinModel({} as Coin)
+  coinItem: MyCoinModel = new MyCoinModel({} as MyCoin)
 
   build() {
     Row(){

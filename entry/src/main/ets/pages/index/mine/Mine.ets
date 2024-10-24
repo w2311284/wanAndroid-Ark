@@ -1,7 +1,8 @@
 import { router } from '@kit.ArkUI'
 import { Cookie } from '@yt/YtKit'
 import { getUserInfo } from '../../../api/User'
-import { CoinInfo, CoinInfoModel, User, UserInfo, UserInfoModel, UserModel } from '../../../models/User'
+import { CoinInfo, CoinInfoModel } from '../../../models/Coin'
+import { UserInfo, UserInfoModel, UserModel } from '../../../models/User'
 
 @Preview
 @Component
@@ -66,7 +67,7 @@ export default struct Mine {
                 router.pushUrl({ url: 'pages/login/Login' })
               } else {
                 router.pushUrl({
-                  url: 'pages/coinList/CoinList',
+                  url: 'pages/coin/CoinList',
                   params: {
                     coinInfo: this.coinInfo
                   }
