@@ -1,5 +1,5 @@
 import { LoginForm, LoginFormModel } from '../../models/User';
-import { router } from '@kit.ArkUI';
+import { promptAction, router } from '@kit.ArkUI';
 import { login } from '../../api/User';
 import { TOKEN_KEY, UserSetting } from '@yt/YtKit';
 
@@ -18,6 +18,7 @@ struct Login {
     const token = JSON.stringify(user)
     await new UserSetting(getContext()).setToken(token)
     AppStorage.setOrCreate(TOKEN_KEY,token)
+    promptAction.showToast({message:'登录成功'})
     router.back()
   }
 

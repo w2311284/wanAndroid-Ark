@@ -31,4 +31,6 @@ export class UserSetting {
     store.putSync(TOKEN_KEY,token)
     await store.flush()
   }
+
+
 }

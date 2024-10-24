@@ -13,6 +13,21 @@ export class LoginFormModel implements LoginForm {
   }
 }
 
+export interface User {
+  coinInfo: CoinInfoModel,
+  userInfo: UserInfoModel
+}
+
+export class UserModel implements User {
+  coinInfo: CoinInfoModel
+  userInfo: UserInfoModel
+
+  constructor(user: User) {
+    this.coinInfo = user.coinInfo
+    this.userInfo = user.userInfo
+  }
+}
+
 export interface CoinInfo {
   coinCount: number
   level: number
@@ -98,5 +113,4 @@ export class UserInfoModel implements UserInfo {
     this.type = model.type
     this.username = model.username
   }
-
 }

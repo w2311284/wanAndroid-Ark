@@ -1,8 +1,27 @@
 import { router } from '@kit.ArkUI'
+import { Cookie, UserSetting } from '@yt/YtKit'
+import { getUserInfo } from '../../../api/User'
+import { UserInfo, UserInfoModel } from '../../../models/User'
 
 @Preview
 @Component
 export default struct Mine {
+ @State userInfo: UserInfoModel = new UserInfoModel({} as UserInfo)
+ @State isLogin: boolean = false
+
+   aboutToAppear() {
+     this.isLogin = Cookie.isLoginCookieValid()
+     if (this.isLogin) {
+       this.getUserInfo()
+     }
+  }
+
+  async getUserInfo() {
+    const result = await getUserInfo()
+    this.userInfo = result.userInfo
+    AlertDialog.show({message: JSON.stringify(this.userInfo)})
+  }
+
   build(){
     Column(){
       this.header()
@@ -19,9 +38,11 @@ export default struct Mine {
         .size({width: 96, height: 96})
         .margin({right:20,left:20})
         .onClick(() => {
-          router.pushUrl({
-            url: 'pages/login/Login'
-          })
+          // animateTo({duration: 300},() => {
+          //
+          //   router.replaceUrl({url: 'pages/login/Login'})
+          // })
+          router.pushUrl({ url: 'pages/login/Login' })
         })
       Column(){
         Text('未登录')

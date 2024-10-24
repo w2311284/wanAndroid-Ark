@@ -2,6 +2,7 @@ import { BASE_URL } from '../constants'
 import http from '@ohos.net.http';
 import { KeyboardAvoidMode, promptAction  } from '@kit.ArkUI';
 import { ResponseData } from '../models';
+import { Cookie } from '.';
 
 async function requestHttp<T>(url: string = "", method: http.RequestMethod = http.RequestMethod.GET, data?: object): Promise<T> {
 
@@ -17,7 +18,7 @@ async function requestHttp<T>(url: string = "", method: http.RequestMethod = htt
     }
   }
 
-  // urlencode
+  // url encode
   if(method === http.RequestMethod.POST){
     if (data && Object.keys(data).length) {
        postParam = Object.keys(data).filter(key => !!data[key]).map(key => {
@@ -26,10 +27,14 @@ async function requestHttp<T>(url: string = "", method: http.RequestMethod = htt
     }
   }
 
+  // cookie
+  const cookie = Cookie.getCookie()
+
   const config: http.HttpRequestOptions = {
     extraData: method !== http.RequestMethod.GET ? postParam : "",
     header: {
       "Content-Type": method === http.RequestMethod.POST ? "application/x-www-form-urlencoded" : "application/json",
+      "Cookie":cookie
     },
     method: method,
     readTimeout: 20000
@@ -46,6 +51,7 @@ async function requestHttp<T>(url: string = "", method: http.RequestMethod = htt
     } else  {
       const res = JSON.parse(result.result as string) as ResponseData<T>
       if (res.errorCode === 0) {
+        Cookie.setCookies(result.cookies)
         return res.data as T
       } else  {
         promptAction.showToast({message: res.errorMsg})
