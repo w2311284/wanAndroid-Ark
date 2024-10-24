@@ -67,12 +67,15 @@ struct CoinList {
           {
             icon: $r('app.media.ic_un_collect'),
             onClick: () => {
-
+              router.pushUrl({
+                url: 'pages/web/WebPage',
+                params: { url: 'https://www.wanandroid.com/blog/show/2653', title: '本站积分规则' }
+              })
             }
           }
         ]
       })
-        .padding({left: 16,right:16})
+        .padding({ left: 16, right: 16 })
       YtList({
         dataSource: this.coinList,
         finished: this.totalPage < this.page,
