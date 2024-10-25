@@ -4,6 +4,7 @@
     "pages/web/WebPage",
     "pages/login/Login",
     "pages/coin/CoinList",
-    "pages/rank/RankList"
+    "pages/rank/RankList",
+    "pages/collect/CollectList"
   ]
 }

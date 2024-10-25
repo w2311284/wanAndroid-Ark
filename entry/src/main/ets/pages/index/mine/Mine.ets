@@ -64,7 +64,7 @@ export default struct Mine {
             .height(12)
             .onClick(() => {
               if (!this.isLogin) {
-                router.pushUrl({ url: 'pages/login/Login' })
+                this.toLoginPage()
               } else {
                 router.pushUrl({
                   url: 'pages/coin/CoinList',
@@ -82,6 +82,10 @@ export default struct Mine {
     .height(150)
     .width('100%')
     .backgroundColor(Color.White)
+  }
+
+  private toLoginPage() {
+    router.pushUrl({ url: 'pages/login/Login' })
   }
 
   @Builder
@@ -116,7 +120,13 @@ export default struct Mine {
       } else if (title === '分享文章') {
         console.log('点击分享文章')
       } else if (title === '收藏文章') {
-        console.log('点击收藏文章')
+        if (this.isLogin) {
+          router.pushUrl({
+            url: 'pages/collect/CollectList'
+          })
+        }else  {
+          this.toLoginPage()
+        }
       } else if (title === '工具列表') {
         console.log('点击工具列表')
       }
