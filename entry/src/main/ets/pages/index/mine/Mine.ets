@@ -128,7 +128,9 @@ export default struct Mine {
           this.toLoginPage()
         }
       } else if (title === '工具列表') {
-        console.log('点击工具列表')
+        router.pushUrl({
+          url:'pages/Tools/ToolList'
+        })
       }
     })
   }

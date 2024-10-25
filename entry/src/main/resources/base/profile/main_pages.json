@@ -5,6 +5,7 @@
     "pages/login/Login",
     "pages/coin/CoinList",
     "pages/rank/RankList",
-    "pages/collect/CollectList"
+    "pages/collect/CollectList",
+    "pages/Tools/ToolList"
   ]
 }
