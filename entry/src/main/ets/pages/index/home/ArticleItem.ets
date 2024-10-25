@@ -1,9 +1,10 @@
 import { LengthMetrics, router } from '@kit.ArkUI';
+import { collectArticle, unCollectArticle } from '../../../api/Collect';
 import { ArticleInfoItemModel, ArticleInfoItemTag } from '../../../models/Article';
 
 @Component
 export struct ArticleItem {
-  private item: ArticleInfoItemModel = new ArticleInfoItemModel();
+ @State private item: ArticleInfoItemModel = new ArticleInfoItemModel();
 
   build() {
     Column() {
@@ -60,10 +61,22 @@ export struct ArticleItem {
         Text(`${this.item.superChapterName}·${this.item.chapterName}`)
           .fontSize(13)
           .fontColor($r('app.color.iris_blue_light_onSurfaceVariant'))
-        Image(this.item.collect ? $r('app.media.icon_collect') : $r('app.media.icon_uncollect'))
+        Image(this.item.collect ? $r('app.media.ic_collect') : $r('app.media.ic_un_collect'))
           .width(24)
           .height(24)
+          .onClick( async () => {
+            if (this.item.collect) {
+              await unCollectArticle(this.item.id)
+              this.item.collect = false
+            }else {
+              await collectArticle(this.item.id)
+              this.item.collect = true
+            }
+          })
       }
+      .onClick(() => {
+
+      })
       .width('100%')
       .justifyContent(FlexAlign.SpaceBetween)
     }

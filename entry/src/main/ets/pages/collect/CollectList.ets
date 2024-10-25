@@ -1,14 +1,14 @@
-import { TitleBar, YtCustomBaseNavBar, YtList } from '@yt/YtKit';
+import {  YtCustomBaseNavBar, YtList } from '@yt/YtKit';
 import { getCollectList } from '../../api/Collect';
-import { ArticleInfoItemModel } from '../../models/Article';
 import { CollectItem } from './CollectItem';
 import { router } from '@kit.ArkUI';
+import { CollectArticleItemModel } from '../../models/Collect';
 
 @Entry
 @Component
 struct CollectList {
   @State message: string = 'Hello World';
-  @State articles: ArticleInfoItemModel[] = []
+  @State articles: CollectArticleItemModel[] = []
   @State page: number = 0
   @State totalPage: number = 0
 
@@ -30,7 +30,7 @@ struct CollectList {
 
   @Builder
   getArticleItemLayout(item: object) {
-    CollectItem({article: item as ArticleInfoItemModel})
+    CollectItem({article: item as CollectArticleItemModel})
       .margin({left: 16, right: 16, bottom: 10})
   }
 

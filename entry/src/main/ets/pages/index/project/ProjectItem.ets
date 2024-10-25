@@ -1,4 +1,5 @@
 import { LengthMetrics, router } from '@kit.ArkUI';
+import { collectArticle, unCollectArticle } from '../../../api/Collect';
 import { ArticleInfoItemModel } from '../../../models/Article';
 
 @Component
@@ -37,8 +38,17 @@ export struct ProjectItem {
           Text(this.item.author)
             .fontSize(12)
           Blank()
-          Image($r('app.media.icon_uncollect'))
-            .size({width:15, height:15})
+          Image(this.item.collect ? $r('app.media.ic_collect') : $r('app.media.ic_un_collect'))
+            .size({width:24, height:24})
+            .onClick(async  () => {
+                if(this.item.collect) {
+                  await unCollectArticle(this.item.id)
+                  this.item.collect = false
+                }else  {
+                  await collectArticle(this.item.id)
+                  this.item.collect = true
+                }
+            })
         }
         .width('100%')
       }

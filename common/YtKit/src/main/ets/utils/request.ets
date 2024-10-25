@@ -1,6 +1,6 @@
 import { BASE_URL } from '../constants'
 import http from '@ohos.net.http';
-import { KeyboardAvoidMode, promptAction  } from '@kit.ArkUI';
+import {  promptAction  } from '@kit.ArkUI';
 import { ResponseData } from '../models';
 import { Cookie } from '.';
 
@@ -9,7 +9,7 @@ async function requestHttp<T>(url: string = "", method: http.RequestMethod = htt
   const httpRequest = http.createHttp()
 
   let urlStr = BASE_URL + url
-  let postParam = ''
+  let postParam = new Object()
   if (method === http.RequestMethod.GET) {
     if (data && Object.keys(data).length) {
       urlStr += "?" + Object.keys(data).filter(key => !!data[key]).map(key => {
@@ -31,7 +31,7 @@ async function requestHttp<T>(url: string = "", method: http.RequestMethod = htt
   const cookie = Cookie.getCookie()
 
   const config: http.HttpRequestOptions = {
-    extraData: method !== http.RequestMethod.GET ? postParam : "",
+    extraData: method !== http.RequestMethod.GET ? postParam : new Object(),
     header: {
       "Content-Type": method === http.RequestMethod.POST ? "application/x-www-form-urlencoded" : "application/json",
       "Cookie":cookie
@@ -59,6 +59,7 @@ async function requestHttp<T>(url: string = "", method: http.RequestMethod = htt
       }
     }
   } catch (error) {
+    promptAction.showToast({message: error.errorMsg})
     return Promise.reject(new Error('服务器异常 catch'))
   }
 }
