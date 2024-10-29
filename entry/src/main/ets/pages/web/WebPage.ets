@@ -8,6 +8,8 @@ import { TitleBar } from '@yt/YtKit';
 struct WebPage {
   @State url: string = '';
   @State title : string = '';
+  @State mode: WebDarkMode = WebDarkMode.Auto
+
   controller: webview.WebviewController = new webview.WebviewController();
   aboutToAppear(): void {
     const params = router.getParams() as WebParams
@@ -29,6 +31,7 @@ struct WebPage {
         .mixedMode(MixedMode.All)
         .onHttpErrorReceive((event) => {
         })
+        .darkMode(this.mode)
     }
   }
 }

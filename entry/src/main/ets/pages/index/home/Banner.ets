@@ -9,12 +9,12 @@ struct Banner {
           Image(item.imagePath)
             .width('100%')
             .height('100%')
+            .borderRadius(15)
         })
       }
       .height(180)
       .width('100%')
-      .borderRadius(15)
-      .margin({
+      .padding({
         left: 16,
         right: 16,
         top: 6,

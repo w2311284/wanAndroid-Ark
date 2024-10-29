@@ -62,6 +62,5 @@ export struct ProjectList {
         await this.getProjectList(true)
       }
     })
-      .backgroundColor(Color.White)
   }
 }

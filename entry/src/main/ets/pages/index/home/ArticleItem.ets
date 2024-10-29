@@ -12,7 +12,7 @@ export struct ArticleItem {
         Row() {
           Text(this.item.author === "" ? this.item.shareUser : this.item.author)
             .margin({ right: 8 })
-            .fontColor($r('app.color.md_theme_on_surface_variant'))
+            .fontColor($r('app.color.on_surface_variant'))
             .fontSize(13)
             .onClick(() => {
             })
@@ -41,7 +41,7 @@ export struct ArticleItem {
 
         Text(this.item.niceDate)
           .fontSize(13)
-          .fontColor($r('app.color.md_theme_on_surface_variant'))
+          .fontColor($r('app.color.on_surface_variant'))
 
       }
       .width('100%')
@@ -52,7 +52,7 @@ export struct ArticleItem {
         .width('100%')
         .fontSize(14)
         .fontWeight(FontWeight.Bold)
-        .fontColor($r('app.color.begonia_red_light_onSurface'))
+        .fontColor($r('app.color.on_surface'))
         .lineSpacing(LengthMetrics.px(20))
         .maxLines(2)
         .textOverflow({ overflow: TextOverflow.Ellipsis })
@@ -60,7 +60,7 @@ export struct ArticleItem {
       Row() {
         Text(`${this.item.superChapterName}·${this.item.chapterName}`)
           .fontSize(13)
-          .fontColor($r('app.color.iris_blue_light_onSurfaceVariant'))
+          .fontColor($r('app.color.on_surface_variant'))
         Image(this.item.collect ? $r('app.media.ic_collect') : $r('app.media.ic_un_collect'))
           .width(24)
           .height(24)
@@ -73,6 +73,7 @@ export struct ArticleItem {
               this.item.collect = true
             }
           })
+          .fillColor($r('app.color.primary'))
       }
       .onClick(() => {
 
@@ -80,7 +81,7 @@ export struct ArticleItem {
       .width('100%')
       .justifyContent(FlexAlign.SpaceBetween)
     }
-    .backgroundColor($r('app.color.secondary_background_container'))
+    .backgroundColor($r('app.color.surface_container'))
     .borderRadius(15)
     .justifyContent(FlexAlign.Start)
     .padding(16)
@@ -90,7 +91,6 @@ export struct ArticleItem {
       left: 16,
       right: 16
     })
-    .shadow({ radius: 10, color: Color.Gray })
     .onClick(() => {
       router.pushUrl({
         url: 'pages/web/WebPage',

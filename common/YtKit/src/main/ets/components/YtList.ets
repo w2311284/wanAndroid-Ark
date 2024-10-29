@@ -1,4 +1,9 @@
 
+interface YtListLoadingOptions {
+  text: string
+  fontSize: number
+  fontColor: ResourceStr
+}
 @Preview
 @Component
 struct YtList {

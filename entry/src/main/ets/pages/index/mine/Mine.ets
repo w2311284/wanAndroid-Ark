@@ -28,10 +28,11 @@ export default struct Mine {
     Column() {
       this.header()
       this.container()
-    }.width('100%')
+    }
+    .width('100%')
     .height('100%')
     .alignItems(HorizontalAlign.Start)
-    .backgroundColor($r('app.color.mainPage_backgroundColor'))
+    .backgroundColor($r('app.color.surface_container'))
   }
 
   @Builder
@@ -49,19 +50,25 @@ export default struct Mine {
         Text(`用户名：${this.isLogin ? this.userInfo.nickname : '未登录'}`)
           .fontSize(12)
           .fontWeight(FontWeight.Bold)
+          .fontColor($r('app.color.on_surface'))
         Text(`id：${this.userInfo.id}`)
           .fontSize(12)
+          .fontColor($r('app.color.on_surface'))
           .margin({ top: 15, bottom: 15 })
         Row({ space: 5 }) {
           Text(`积分：${this.coinInfo.coinCount}`)
             .fontSize(12)
+            .fontColor($r('app.color.on_surface'))
           Text(`等级：${this.coinInfo.level}`)
             .fontSize(12)
+            .fontColor($r('app.color.on_surface'))
           Text(`排名：${this.coinInfo.rank}`)
             .fontSize(12)
+            .fontColor($r('app.color.on_surface'))
           Image($r('app.media.arrow'))
             .width(12)
             .height(12)
+            .fillColor($r('app.color.on_surface'))
             .onClick(() => {
               if (!this.isLogin) {
                 this.toLoginPage()
@@ -77,11 +84,12 @@ export default struct Mine {
         }
       }
       .alignItems(HorizontalAlign.Start)
+      .layoutWeight(1)
     }
     .padding({ top: 40, bottom: 40 })
     .height(150)
     .width('100%')
-    .backgroundColor(Color.White)
+    .backgroundColor($r('app.color.surface'))
   }
 
   private toLoginPage() {
@@ -100,18 +108,20 @@ export default struct Mine {
   cell(icon: Resource, title: string) {
     Row() {
       Image(icon)
+        .fillColor($r('app.color.on_surface'))
         .size({ width: 20, height: 20 })
         .margin({ right: 10, left: 15 })
       Text(title)
         .fontSize(12)
         .fontWeight(FontWeight.Bold)
+        .fontColor($r('app.color.on_surface'))
       Blank()
       Image($r('app.media.arrow'))
         .width(16)
         .height(16)
         .margin({ right: 15 })
+        .fillColor($r('app.color.on_surface'))
     }
-    .backgroundColor($r('app.color.mainPage_backgroundColor'))
     .width('100%')
     .height(44)
     .onClick((event) => {

@@ -43,6 +43,32 @@
     {
       "name": "iris_blue_light_onSurfaceVariant",
       "value": "#41484D"
+    },
+    {
+      "name": "white",
+      "value": "#FFFFFF"
+    },
+
+
+    {
+      "name": "primary",
+      "value": "#4a5c92"
+    },
+    {
+      "name": "surface",
+      "value": "#faf8ff"
+    },
+    {
+      "name": "surface_container",
+      "value": "#f0ecf4"
+    },
+    {
+      "name": "on_surface",
+      "value": "#1c1b20"
+    },
+    {
+      "name": "on_surface_variant",
+      "value": "#45464f"
     }
   ]
 }

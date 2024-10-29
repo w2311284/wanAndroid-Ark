@@ -31,5 +31,6 @@ export default struct ProjectTabs {
     }
     .scrollable(true)
     .barMode(BarMode.Scrollable)
+    .backgroundColor($r('app.color.surface'))
   }
 }

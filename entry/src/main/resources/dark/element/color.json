@@ -1,0 +1,24 @@
+{
+  "color": [
+    {
+      "name": "primary",
+      "value": "#b3c5ff"
+    },
+    {
+      "name": "surface",
+      "value": "#121318"
+    },
+    {
+      "name": "surface_container",
+      "value": "#201f25"
+    },
+    {
+      "name": "on_surface",
+      "value": "#e5e1e9"
+    },
+    {
+      "name": "on_surface_variant",
+      "value": "#c5c6d0"
+    }
+  ]
+}

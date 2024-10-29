@@ -27,6 +27,7 @@ export struct GroupTabs {
     }
     .barMode(BarMode.Scrollable)
     .scrollable(true)
+    .backgroundColor($r('app.color.surface'))
   }
 }
 

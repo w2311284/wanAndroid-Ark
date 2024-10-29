@@ -20,7 +20,7 @@ struct Login {
 
   @Styles
   loginStyle() {
-    .backgroundColor('#fff')
+    .backgroundColor($r('app.color.surface_container'))
     .border({color: $r('app.color.primary'), width: 1})
     .borderRadius(5)
     .height(55)

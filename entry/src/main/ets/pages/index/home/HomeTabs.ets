@@ -15,19 +15,19 @@ export default struct HomeTabs {
         .margin({ top: 14, bottom: 10 })
         .fontSize(14)
         .fontWeight(this.currentIndex === index ? 500 : 300)
-        .fontColor(this.currentIndex === index ? $r('app.color.mainPage_selected') : $r('app.color.mainPage_normal'))
+        .fontColor(this.currentIndex === index ? $r('app.color.primary') : $r('app.color.on_surface_variant'))
 
       Divider()
         .strokeWidth(3)
-        .color($r('app.color.mainPage_selected'))
+        .color($r('app.color.primary'))
         .opacity(this.currentIndex === index ? 1 : 0)
         .width('50%')
     }
     .justifyContent(FlexAlign.SpaceAround)
     .width(Constants.FULL_PARENT)
     .onClick(() => {
-      this.currentIndex = index;
-      this.tabsController.changeIndex(this.currentIndex);
+        this.currentIndex = index;
+        this.tabsController.changeIndex(this.currentIndex);
     })
   }
 
@@ -55,5 +55,6 @@ export default struct HomeTabs {
     .onChange((index: number) => {
       this.currentIndex = index;
     })
+    .backgroundColor($r('app.color.surface'))
   }
 }
