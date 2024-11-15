@@ -6,7 +6,7 @@ import { ArticleItem } from '../home/ArticleItem'
 
 @Component
 export struct GroupList {
-  private author: AuthorModel = new AuthorModel()
+  author: AuthorModel = new AuthorModel()
   @State articles: Array<ArticleInfoItemModel> = []
   @State page: number = 0
   @State totalPage: number = 1

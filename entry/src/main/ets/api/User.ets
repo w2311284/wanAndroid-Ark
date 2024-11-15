@@ -1,15 +1,16 @@
-import { Request } from '@yt/YtKit'
+import { YTRequest } from '@yt/foundation'
 import { ToolModel } from '../models/Tool'
 import { LoginFormModel,  UserInfoModel, UserModel } from '../models/User'
+import { LOGIN, TOOL_LIST, USER_INFO } from './Url'
 
 export const login = (params: LoginFormModel) => {
-  return Request.post<UserInfoModel>('/user/login',params)
+  return YTRequest.shared().post<UserInfoModel>(LOGIN,params)
 }
 
 export const getUserInfo = () => {
-  return Request.get<UserModel>('/user/lg/userinfo/json')
+  return YTRequest.shared().get<UserModel>(USER_INFO)
 }
 
 export const getToolList = () => {
-  return Request.get<ToolModel[]>('/tools/list/json')
+  return YTRequest.shared().get<ToolModel[]>(TOOL_LIST)
 }

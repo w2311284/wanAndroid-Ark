@@ -1,12 +1,12 @@
-
-import { Request } from '@yt/YtKit'
+import { YTRequest } from '@yt/foundation'
 import { CollectArticleListDataModel } from '../models/Collect'
+import { COLLECTION_ARTICLE, COLLECTION_LIST, UN_COLLECTION } from './Url'
 
 /**
  * 获取收藏列表
  */
 export const  getCollectList = (page: number) => {
-  return Request.get<CollectArticleListDataModel>(`/lg/collect/list/${page}/json`)
+  return YTRequest.shared().get<CollectArticleListDataModel>(`${COLLECTION_LIST}${page}/json`)
 }
 
 /**
@@ -14,12 +14,12 @@ export const  getCollectList = (page: number) => {
  */
 
 export const collectArticle = (id: number) => {
-  return Request.post<string>(`/lg/collect/${id}/json`)
+  return YTRequest.shared().post<string>(`${COLLECTION_ARTICLE}${id}/json`)
 }
 
 /**
  * 取消收藏
  */
 export const unCollectArticle = (id: number) => {
-  return Request.post<string>(`/lg/uncollect_originId/${id}/json`)
+  return YTRequest.shared().post<string>(`${UN_COLLECTION}${id}/json`)
 }

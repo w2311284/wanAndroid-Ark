@@ -1,12 +1,31 @@
 {
   "app": {
-    "signingConfigs": [],
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/youzhadoubao/.ohos/config/default_wanAndroid-Ark_pt_9xPYS96R_NyQfuflqbJcxFzM-fCc2mpVi-oOjlv4=.cer",
+          "storePassword": "0000001BD2F7CAA9BBFD673A11D70BD30E262629A43B45F8F8C29391AC1D10E0F31912920C7B561116D331",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001BA5535B24DB479BD69F5502B178AC30CEE45C5C00B68A517745EA6A350E094C13E52F651421FDD8",
+          "profile": "/Users/youzhadoubao/.ohos/config/default_wanAndroid-Ark_pt_9xPYS96R_NyQfuflqbJcxFzM-fCc2mpVi-oOjlv4=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/youzhadoubao/.ohos/config/default_wanAndroid-Ark_pt_9xPYS96R_NyQfuflqbJcxFzM-fCc2mpVi-oOjlv4=.p12"
+        }
+      }
+    ],
     "products": [
       {
         "name": "default",
         "signingConfig": "default",
         "compatibleSdkVersion": "5.0.0(12)",
-        "runtimeOS": "HarmonyOS"
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "useNormalizedOHMUrl": true
+          }
+        }
       }
     ]
   },
@@ -26,6 +45,10 @@
     {
       "name": "YtKit",
       "srcPath": "./common/YtKit"
+    },
+    {
+      "name": "Login",
+      "srcPath": "./Login",
     }
   ]
 }

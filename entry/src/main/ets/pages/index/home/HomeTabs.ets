@@ -26,8 +26,8 @@ export default struct HomeTabs {
     .justifyContent(FlexAlign.SpaceAround)
     .width(Constants.FULL_PARENT)
     .onClick(() => {
-        this.currentIndex = index;
-        this.tabsController.changeIndex(this.currentIndex);
+      this.currentIndex = index;
+      this.tabsController.changeIndex(this.currentIndex);
     })
   }
 
@@ -41,6 +41,7 @@ export default struct HomeTabs {
         Recommended()
       }
       .tabBar(this.TabBuilder(Constants.RECOMMENDED_TITLE, 0))
+
       /* 广场 */
       TabContent() {
         Square()

@@ -1,23 +1,24 @@
-import { Request } from '@yt/YtKit'
+import { YTRequest } from '@yt/foundation'
 import { ArticleListDataModel } from '../models/Article'
+import { ARTICLE_RECOMMEND_LIST, ARTICLE_SQUARE_LIST, QA_LIST } from './Url'
 
 /**
  * 获取推荐文章列表
  */
 export const getArticleList = (page: number) => {
-  return Request.get<ArticleListDataModel>(`/article/list/${page}/json?page_size=10`)
+  return YTRequest.shared().get<ArticleListDataModel>(`${ARTICLE_RECOMMEND_LIST}${page}/json?page_size=10`)
 }
 
 /**
  * 获取广场文章列表
  */
 export const getSquareList = (page: number) => {
-  return Request.get<ArticleListDataModel>(`/user_article/list/${page}/json?page_size=10`)
+  return YTRequest.shared().get<ArticleListDataModel>(`${ARTICLE_SQUARE_LIST}${page}/json?page_size=10`)
 }
 
 /**
  * 获取问答文章列表
  */
 export const getAnswerList = (page: number) => {
-  return Request.get<ArticleListDataModel>(`/wenda/list/${page}/json?page_size=10`)
+  return YTRequest.shared().get<ArticleListDataModel>(`${QA_LIST}${page}/json?page_size=10`)
 }

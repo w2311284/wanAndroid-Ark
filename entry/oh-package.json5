@@ -7,6 +7,7 @@
   "license": "",
   "dependencies": {
     "@yt/YtKit" : "file:../common/YtKit",
+    "@yt/foundation": "file:./libs/YTFoundation-default.tgz"
   }
 }
 

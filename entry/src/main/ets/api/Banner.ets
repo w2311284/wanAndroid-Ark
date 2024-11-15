@@ -1,9 +1,10 @@
-import { Request } from '@yt/YtKit'
+import { YTRequest } from '@yt/foundation'
 import BannerItemModel from '../models/Banner'
+import { BANNER } from './Url'
 
 /**
  * 获取banner
  */
 export const getBannerList = () => {
-  return Request.get<BannerItemModel[]>('/banner/json')
+  return YTRequest.shared().get<BannerItemModel[]>(BANNER)
 }

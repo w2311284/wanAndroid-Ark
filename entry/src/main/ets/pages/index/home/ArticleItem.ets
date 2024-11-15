@@ -80,6 +80,7 @@ export struct ArticleItem {
       })
       .width('100%')
       .justifyContent(FlexAlign.SpaceBetween)
+
     }
     .backgroundColor($r('app.color.surface_container'))
     .borderRadius(15)
@@ -92,6 +93,7 @@ export struct ArticleItem {
       right: 16
     })
     .onClick(() => {
+
       router.pushUrl({
         url: 'pages/web/WebPage',
         params: {
